@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: vi-assistant
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 2 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    envVars:
+      - key: HUGGINGFACE_API_KEY
+        sync: false          # Set manually in Render dashboard
+      - key: MODEL_NAME
+        value: mistralai/Mistral-7B-Instruct-v0.3
+      - key: MAX_NEW_TOKENS
+        value: "512"
+      - key: PYTHON_VERSION
+        value: "3.11.0"
