@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 HF_API_KEY     = os.environ.get("HUGGINGFACE_API_KEY", "")
-MODEL_NAME     = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-7B-Instruct")
+MODEL_NAME     = os.environ.get("MODEL_NAME", "Qwen/Qwen3-32B")
 API_URL        = "https://router.huggingface.co/v1/chat/completions"
 MAX_NEW_TOKENS = int(os.environ.get("MAX_NEW_TOKENS", "512"))
 SYSTEM_PROMPT  = (
