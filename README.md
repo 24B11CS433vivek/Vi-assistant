@@ -1,5 +1,34 @@
 # Vi — Personal AI Assistant
 
+> A lightweight personal AI chat assistant built with Flask and Hugging Face Inference Providers.
+
+**Live demo:** https://vi-assistant.onrender.com
+*(Hosted on Render's free tier, so the first load after idle can take 30-50 seconds.)*
+
+## Screenshots
+
+| Home | Chat |
+|------|------|
+| ![Home screen](docs/home.png) | ![Chat conversation](docs/chat.png) |
+
+## Features
+
+- Clean chat interface that keeps conversation context across messages
+- Flask backend with three routes: `/` (UI), `/chat` (POST), `/health`
+- Works with Hugging Face chat models; switch models with the `MODEL_NAME` environment variable
+- In-memory response cache (up to 200 entries) to avoid repeat API calls
+- API keys stay in `.env`, which is git-ignored (see `.env.example`)
+- Ready-to-use deployment files for Render, Railway, and Replit
+
+## Tech Stack
+
+- **Backend:** Python, Flask
+- **AI:** Hugging Face Inference Providers (chat completions)
+- **Frontend:** HTML, CSS, and JavaScript (`templates/index.html`)
+- **Hosting:** Render (also configured for Railway and Replit)
+
+---
+
 A fast, free-tier personal AI assistant powered by Hugging Face Inference API.
 Runs entirely on cloud infrastructure — no local machine required.
 
